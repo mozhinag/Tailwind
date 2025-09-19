@@ -1,0 +1,84 @@
+install tailwind class on terminal
+******************************
+npm install -D tailwindcss@3
+********************************
+npx tailwindcss init -> then it will create tailwind.config.css file.
+*******************************************************
+
+ /** @type {import('tailwindcss').Config} */
+export default {
+   content: ["./src/**/*.{html,js}"],
+   theme: {
+     extend: {},
+   },
+   plugins: [],
+ }
+paste the above code on this file.
+
+if html file only means type this ->content: ['./*.html'],
+
+then like -> /** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ['./*.html'],
+  theme: {
+    screens: {
+      sm: '480px',
+      md: '768px',
+      lg: '976px',
+      xl: '1440px'
+    },
+   
+    fontFamily: {
+      sans: ['Graphik', 'sans-serif'],
+      serif: ['Merriweather', 'serif'],
+    },
+    extend: {
+       colors: {
+      'blue': '#1fb6ff',
+      'purple': '#7e5bef',
+      'pink': '#ff49db',
+      'orange': '#ff7849',
+      'green': '#13ce66',
+      'yellow': '#ffc82c',
+      'gray-dark': '#273444',
+      'gray': '#8492a6',
+      'gray-light': '#d3dce6',
+      'white': '#ffffff',
+      'black': '#000000',
+    },
+    },
+  },
+  plugins: [],
+}
+**********************************
+create input.css file and paste it
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+****************************************
+in terminal put the belove code
+npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
+ it will create css folder and its inside main.css also.
+**************************************************************
+afterthat put the belove lines in package.json 
+"scripts": {
+    "build": "tailwindcss -i ./input.css -o ./css/main.css",
+    "watch": "tailwindcss -i ./input.css -o ./css/main.css --watch"
+  }
+
+  later in terminal npm run build
+  after npm run watch
+********************************************************************
+then create index.html
+1.mx-auto - margin right to left  x axis
+2.my- auto - margin top to bottom y axis
+3.mt - margin top
+4.mb - margin bottom 
+5.mr,ml - margin right,and left
+.flex.px-3.pt-3.justify-between means <div class="flex px-3 pt-3 justify-between"></div>
+6.a.pt-1 means anchor tag <a href="" class="pt-1"></a>
+7.section#hero means <section id="hero"></section>
+
+
+
+
